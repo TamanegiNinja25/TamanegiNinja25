@@ -397,7 +397,7 @@ class Jogo extends BossBase {
   phases() {
     return [
       { at: 0.55, id: 'p2', run: () => { this.w.game.toast('"Weaklings like you should just burn!"', 'boss'); this.e.enrage = 1.15; } },
-      { at: 0.25, id: 'domain', run: () => { this.domain('coffin', 12, 8, 0.075, 'Domain Expansion: Coffin of the Iron Mountain'); } },
+      { at: 0.25, id: 'domain', run: () => { this.domain('coffin', 12, 8, 0.065, 'Domain Expansion: Coffin of the Iron Mountain'); } },
     ];
   }
 }
@@ -432,7 +432,7 @@ class Sukuna extends BossBase {
   phases() {
     return [
       { at: 0.65, id: 'p2', run: () => { this.w.game.toast('"Know your place, fool."', 'boss'); this.e.enrage = 1.15; } },
-      { at: 0.35, id: 'domain', run: () => { this.e.enrage = 1.3; this.domain('shrine', 13, 9, 0.08, 'Domain Expansion: Malevolent Shrine'); } },
+      { at: 0.35, id: 'domain', run: () => { this.e.enrage = 1.3; this.domain('shrine', 13, 9, 0.07, 'Domain Expansion: Malevolent Shrine'); } },
     ];
   }
 }

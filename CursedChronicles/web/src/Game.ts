@@ -32,12 +32,13 @@ export class Game {
   portraits: Portraits;
   ps: PlayerState | null = null;
   state: GameState = 'boot';
-  settings = { music: 0.55, sfx: 0.85, amb: 0.6, quality: 'high' as Quality, zoom: 1 };
+  settings = { music: 0.55, sfx: 0.85, amb: 0.6, quality: 'high' as Quality, zoom: 1, autoQ: true };
   private last = performance.now();
   private autosaveT = 0;
   private titleT = 0;
   private fpsAcc = 0;
   private fpsN = 0;
+  private slowSecs = 0;
   fps = 60;
 
   constructor() {
@@ -85,7 +86,7 @@ export class Game {
     if (dt > 0.1) dt = 0.1;
     if (dt <= 0) return;
     this.fpsAcc += dt; this.fpsN++;
-    if (this.fpsAcc > 1) { this.fps = this.fpsN / this.fpsAcc; this.fpsAcc = 0; this.fpsN = 0; }
+    if (this.fpsAcc > 1) { this.fps = this.fpsN / this.fpsAcc; this.fpsAcc = 0; this.fpsN = 0; this.autoQuality(); }
     this.input.update();
     try {
       this.update(dt);
@@ -158,6 +159,18 @@ export class Game {
         if (mobile) this.settings.quality = 'medium';
       }
     } catch { /* storage unavailable */ }
+  }
+
+  /** Steps graphics down a tier when play stays below ~24 fps, unless the player picked a quality. */
+  private autoQuality() {
+    const s = this.settings;
+    if (!s.autoQ || this.state !== 'play' || s.quality === 'low') { this.slowSecs = 0; return; }
+    this.slowSecs = this.fps < 24 ? this.slowSecs + 1 : 0;
+    if (this.slowSecs < 6) return;
+    this.slowSecs = 0;
+    s.quality = s.quality === 'high' ? 'medium' : 'low';
+    this.applySettings();
+    this.toast(`Graphics set to ${s.quality === 'low' ? 'Low' : 'Medium'} to keep the game smooth`, 'info', 3);
   }
 
   applySettings() {

@@ -545,7 +545,7 @@ export class Menus {
       case 'selquest': this.selQuest = t.dataset.id!; audio.play('click', { vol: 0.5 }); break;
       case 'save': this.game.save(true); break;
       case 'title': this.game.save(false); this.close(); this.game.toTitle(); return;
-      case 'quality': this.game.settings.quality = t.dataset.q as any; this.game.applySettings(); break;
+      case 'quality': this.game.settings.quality = t.dataset.q as any; this.game.settings.autoQ = false; this.game.applySettings(); break;
       case 'zoom': this.game.settings.zoom = +t.dataset.z!; this.game.applySettings(); break;
       case 'shoptab': this.shopTab = t.dataset.t as any; break;
       case 'buy': {

@@ -221,7 +221,7 @@ export class UI {
       const tgt = e.target as HTMLElement;
       if (tgt.closest('[data-back]')) { audio.play('click'); this.titleMain(); return; }
       const qb = tgt.closest('[data-q]') as HTMLElement | null;
-      if (qb) { s.quality = qb.dataset.q as any; this.game.applySettings(); this.titleSettings(); }
+      if (qb) { s.quality = qb.dataset.q as any; s.autoQ = false; this.game.applySettings(); this.titleSettings(); }
     };
   }
 

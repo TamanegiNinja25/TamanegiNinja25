@@ -432,6 +432,9 @@ export class World implements WorldAPI {
     this.domainUntil = this.time + dur;
     this.sfx('domain', e.x, e.z);
     this.game.ui.banner('DOMAIN EXPANSION', banner.replace('Domain Expansion: ', ''), '#ff2a4a');
+    // the threat stirs the player's cursed energy, bringing a counter-domain within reach
+    const ps = this.game.ps!;
+    ps.d.domain = Math.min(100, ps.d.domain + 25);
     this.game.toast('Sure-hit domain! Survive it — or use your Ultimate to clash!', 'boss', 3);
   }
 
