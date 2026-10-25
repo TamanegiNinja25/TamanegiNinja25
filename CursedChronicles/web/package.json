@@ -1,0 +1,20 @@
+{
+  "name": "cursed-chronicles",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cursed Chronicles - a Zenonia-style action RPG fan game set in the Jujutsu Kaisen universe",
+  "scripts": {
+    "build": "node build.mjs",
+    "watch": "node build.mjs --watch",
+    "typecheck": "tsc --noEmit",
+    "serve": "node build.mjs --serve"
+  },
+  "devDependencies": {
+    "@types/three": "0.185.0",
+    "esbuild": "0.28.1",
+    "typescript": "5.9.3"
+  },
+  "dependencies": {
+    "three": "0.185.1"
+  }
+}

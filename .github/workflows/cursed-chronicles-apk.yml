@@ -1,0 +1,60 @@
+name: Cursed Chronicles APK
+
+on:
+  push:
+    paths:
+      - 'CursedChronicles/**'
+      - '.github/workflows/cursed-chronicles-apk.yml'
+  pull_request:
+    paths:
+      - 'CursedChronicles/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: CursedChronicles/web/package-lock.json
+
+      - name: Type-check and bundle the game
+        working-directory: CursedChronicles/web
+        run: |
+          npm ci
+          npm run typecheck
+          npm run build
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build APK
+        working-directory: CursedChronicles/android
+        run: |
+          chmod +x gradlew
+          ./gradlew --no-daemon assembleDebug assembleRelease
+
+      - name: Collect APKs
+        run: |
+          mkdir -p dist
+          cp CursedChronicles/android/app/build/outputs/apk/debug/app-debug.apk dist/CursedChronicles-debug.apk
+          cp CursedChronicles/android/app/build/outputs/apk/release/app-release.apk dist/CursedChronicles.apk
+
+      - name: Upload APKs
+        uses: actions/upload-artifact@v4
+        with:
+          name: CursedChronicles-apk
+          path: dist/*.apk
+          if-no-files-found: error
