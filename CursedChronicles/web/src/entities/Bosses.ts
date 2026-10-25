@@ -159,8 +159,11 @@ abstract class BossBase implements BossScript {
     });
   }
 
-  summonAdds(id: string, n: number, r = 4) {
+  /** Summons up to `n` adds, never letting more than `cap` of that kind be alive at once. */
+  summonAdds(id: string, n: number, r = 4, cap = 5) {
     const e = this.e;
+    const alive = this.w.enemies.filter(o => o.alive && o.noLoot && o.d.id === id).length;
+    n = Math.min(n, cap - alive);
     for (let i = 0; i < n; i++) {
       const a = (i / n) * TAU + rand(0, 1);
       const x = e.x + Math.sin(a) * r, z = e.z + Math.cos(a) * r;

@@ -54,6 +54,7 @@ export class World implements WorldAPI {
   hitstopT = 0;
   private spawners: SpawnerState[] = [];
   bossActive: { def: BossDef; enemy: Enemy } | null = null;
+  private bossPending: BossDef | null = null;
   private bossStarting = false;
   bossDom: { enemy: Enemy; until: number; dps: number; r: number; x: number; z: number; tick: number } | null = null;
   domainOwner: 'player' | 'enemy' | null = null;
@@ -141,6 +142,7 @@ export class World implements WorldAPI {
     this.dummyTimers = [];
     this.bossActive = null;
     this.bossStarting = false;
+    this.bossPending = null;
     this.bossDom = null;
     this.domainOwner = null;
     this.fx.clear();
@@ -286,6 +288,7 @@ export class World implements WorldAPI {
       const def = ENEMIES[id];
       if (this.col.blocked(x, z, def.radius * def.scale)) continue;
       if (this.player && Math.hypot(this.player.x - x, this.player.z - z) < 7 && this.time > 1) continue;
+      if (this.inArena(x, z)) continue;
       const lv = s.level ? randInt(s.level[0], s.level[1]) : def.level;
       const e = this.spawnEnemy(id, x, z, lv, false);
       e.spawner = { alive: 0, onDeath: () => { st.alive.delete(e); st.timers.push(s.respawn * rand(0.8, 1.3)); } };
@@ -378,8 +381,18 @@ export class World implements WorldAPI {
 
   private startBoss(b: BossDef) {
     this.bossStarting = true;
+    this.bossPending = b;
     const go = () => {
       this.bossStarting = false;
+      this.bossPending = null;
+      // Lesser curses scatter from the arena so the duel isn't buried under trash mobs.
+      for (const st of this.spawners) for (const o of st.alive) {
+        if (!o.alive || Math.hypot(o.x - b.x, o.z - b.z) >= b.r + 4) continue;
+        this.fx.smoke(o.x, o.z, 0x1a0a1a, 8);
+        o.alive = false; o.dispose();
+        st.alive.delete(o);
+        st.timers.push(st.def.respawn);
+      }
       const def = ENEMIES[b.id];
       this.fx.sigil(b.x, b.z, 3.5, 0x8a0a2a, 1.4);
       this.fx.smoke(b.x, b.z, 0x1a0a1a, 30);
@@ -400,6 +413,12 @@ export class World implements WorldAPI {
   }
 
   inBossFight() { return !!this.bossActive || this.bossStarting; }
+
+  /** True inside the arena of the boss currently being fought (spawners stay out of it). */
+  private inArena(x: number, z: number) {
+    const b = this.bossActive?.def ?? this.bossPending;
+    return !!b && Math.hypot(x - b.x, z - b.z) < b.r + 4;
+  }
 
   bossDomain(e: Enemy, kind: string, r: number, dur: number, dpsPct: number, banner: string) {
     if (this.domainOwner === 'player') {

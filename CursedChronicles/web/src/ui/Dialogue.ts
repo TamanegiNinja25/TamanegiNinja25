@@ -43,6 +43,8 @@ export class Dialogue {
     this.root.addEventListener('touchstart', (e) => { if ((e.target as HTMLElement).closest('.dlg-choice')) return; adv(e); }, { passive: false });
     window.addEventListener('keydown', (e) => {
       if (!this.active) return;
+      const n = /^Digit([1-9])$/.exec(e.code);
+      if (n) { (this.choicesEl.children[+n[1] - 1] as HTMLElement | undefined)?.click(); return; }
       if (e.code === 'Space' || e.code === 'Enter' || e.code === 'KeyJ' || e.code === 'KeyF') { e.preventDefault(); this.advance(); }
     });
   }

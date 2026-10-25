@@ -16,12 +16,18 @@ export const occlusion = {
 /** Anime-style rim light shared by all toon materials (tinted per map). */
 export const rim = { uRim: { value: 0.3 }, uRimColor: { value: new THREE.Color(0x9ab8ff) } };
 
-const OCC_VERT_HEAD = 'uniform mat4 uViewInv;\nvarying vec3 vOccW;\nvarying float vOccD;';
-const OCC_VERT_BODY = 'vOccW = (uViewInv * mvPosition).xyz;\nvOccD = -mvPosition.z;';
-const OCC_FRAG_HEAD = `uniform vec3 uOccA; uniform vec3 uOccB; uniform float uOccOn; uniform float uOccDepth; varying vec3 vOccW; varying float vOccD;
+// three.js only defines USE_SKINNING for the vertex stage, so skinned meshes (characters)
+// are flagged through a varying to keep them out of the dither/cutaway.
+const OCC_VERT_HEAD = 'uniform mat4 uViewInv;\nvarying vec3 vOccW;\nvarying float vOccD;\nvarying float vOccSkin;';
+const OCC_VERT_BODY = `vOccW = (uViewInv * mvPosition).xyz;\nvOccD = -mvPosition.z;
+#ifdef USE_SKINNING
+vOccSkin = 1.0;
+#else
+vOccSkin = 0.0;
+#endif`;
+const OCC_FRAG_HEAD = `uniform vec3 uOccA; uniform vec3 uOccB; uniform float uOccOn; uniform float uOccDepth; varying vec3 vOccW; varying float vOccD; varying float vOccSkin;
 float occBayer(vec2 p){ return fract(52.9829189 * fract(dot(p, vec2(0.06711056, 0.00583715)))); }`;
-const OCC_FRAG_BODY = `#ifndef USE_SKINNING
-if (uOccOn > 0.5) { vec3 ab = uOccB - uOccA; float tt = clamp(dot(vOccW - uOccA, ab) / max(dot(ab, ab), 0.001), 0.0, 1.0);
+const OCC_FRAG_BODY = `if (uOccOn > 0.5 && vOccSkin < 0.5) { vec3 ab = uOccB - uOccA; float tt = clamp(dot(vOccW - uOccA, ab) / max(dot(ab, ab), 0.001), 0.0, 1.0);
   float dd = length(vOccW - (uOccA + ab * tt)); float kk = smoothstep(2.4, 1.0, dd) * step(tt, 0.88) * step(0.35, vOccW.y) * 0.82;
   vec3 nrm = normalize(vec3(ab.z, 0.0, -ab.x)); float lat = abs(dot(vOccW - uOccA, nrm));
   float cut = smoothstep(1.2, 3.0, uOccDepth - vOccD) * smoothstep(1.6, 2.8, vOccW.y) * smoothstep(9.0, 6.0, lat) * 0.96;
@@ -29,8 +35,7 @@ if (uOccOn > 0.5) { vec3 ab = uOccB - uOccA; float tt = clamp(dot(vOccW - uOccA,
   #ifdef OCC_OUTLINE
   if (uOccDepth - vOccD > 1.0) discard;
   #endif
-  if (kk > 0.0 && occBayer(gl_FragCoord.xy) < kk) discard; }
-#endif`;
+  if (kk > 0.0 && occBayer(gl_FragCoord.xy) < kk) discard; }`;
 
 function injectOcclusion(shader: any, outline = false) {
   if (outline) shader.fragmentShader = '#define OCC_OUTLINE\n' + shader.fragmentShader;

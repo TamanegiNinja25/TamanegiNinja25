@@ -324,7 +324,7 @@ const kyoto: MapDef = {
     b.border(['cedar', 'pine'], 1.5, 2.6, 1, [{ x: 0, z: 41, r: 4 }]);
     b.npc({ id: 'ijichi', x: 4, z: 34, facing: Math.PI, shop: 'travel' });
     b.npc({ id: 'miwa', x: -3, z: 30, facing: Math.PI });
-    b.npc({ id: 'todo', x: -14, z: 4, facing: Math.PI, cond: done('m9') });
+    b.npc({ id: 'todo', x: -14, z: 4, facing: Math.PI, cond: (ps) => ['ready', 'done'].includes(ps.questState('m9')?.state ?? '') });
     b.pickup('miwaSword', 27, -9, 's_miwa');
     b.spawner({ enemies: [{ id: 'rootCurse' }, { id: 'bud', w: 2 }], x: 8, z: 14, w: 30, d: 16, count: 7, respawn: 11, level: [19, 21] });
     b.spawner({ enemies: [{ id: 'bud' }, { id: 'forestHound' }], x: -16, z: -12, w: 22, d: 16, count: 6, respawn: 12, level: [20, 23] });

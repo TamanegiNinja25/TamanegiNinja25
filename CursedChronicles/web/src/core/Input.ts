@@ -31,7 +31,8 @@ export class Input {
       this.keys.add(e.code);
       const a = this.keymap[e.code];
       if (a) {
-        if (!this.held.has(a)) this.pressedQ.add(a);
+        // Keys pressed while dialogue/menus own the input must not fire once play resumes.
+        if (this.enabled && !this.held.has(a)) this.pressedQ.add(a);
         this.held.add(a);
         if (e.code === 'Space') e.preventDefault();
       }

@@ -50,7 +50,8 @@ export class Menus {
     parent.appendChild(this.root);
     window.addEventListener('keydown', (e) => {
       if (!this.open) return;
-      if (e.code === 'Escape') { e.preventDefault(); this.close(); }
+      // stopImmediatePropagation keeps Game's hotkey listener from reopening the system menu
+      if (e.code === 'Escape') { e.preventDefault(); e.stopImmediatePropagation(); this.close(); }
     });
     this.root.addEventListener('click', (e) => this.onClick(e));
   }
