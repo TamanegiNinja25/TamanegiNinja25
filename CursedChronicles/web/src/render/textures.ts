@@ -74,7 +74,7 @@ export function tileTexture(kind: TileKind): THREE.Texture {
       break;
     }
     case 'dirt': case 'mud': case 'sand': {
-      const base = kind === 'dirt' ? [122, 96, 70] : kind === 'mud' ? [70, 58, 48] : [196, 176, 136];
+      const base = kind === 'dirt' ? [122, 96, 70] : kind === 'mud' ? [96, 82, 68] : [196, 176, 136];
       paintNoise(ctx, S, (u, v, n) => {
         const k = n(u, v);
         return [base[0] * (0.85 + k * 0.3), base[1] * (0.85 + k * 0.3), base[2] * (0.85 + k * 0.3)];
@@ -126,10 +126,10 @@ export function tileTexture(kind: TileKind): THREE.Texture {
       break;
     }
     case 'asphalt': {
-      paintNoise(ctx, S, (u, v, n) => { const k = n(u, v) * 0.3 + 0.85; return [72 * k, 73 * k, 80 * k]; });
+      paintNoise(ctx, S, (u, v, n) => { const k = n(u, v) * 0.3 + 0.85; return [94 * k, 95 * k, 103 * k]; });
       for (let i = 0; i < 3000; i++) {
         const s = rng.range(0.6, 1.6);
-        ctx.fillStyle = rgb(78 * s, 78 * s, 86 * s);
+        ctx.fillStyle = rgb(100 * s, 100 * s, 108 * s);
         ctx.fillRect(rng.next() * S, rng.next() * S, 1, 1);
       }
       ctx.strokeStyle = 'rgba(20,20,24,0.5)'; ctx.lineWidth = 1;

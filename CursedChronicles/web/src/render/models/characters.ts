@@ -13,8 +13,8 @@ export const SPECS: Record<string, HumanoidSpec> = {
     top: NAVY, bottom: NAVY, accent: GOLD, shoes: 0xd23a3a, inner: 0xc3262f, bulk: 1.05,
   },
   megumi: {
-    skin: 0xf1d3b8, hair: 0x15171f, hairStyle: 'megumi', eyes: 0x2f5866, outfit: 'uniform',
-    top: 0x181b2b, bottom: 0x181b2b, accent: GOLD, shoes: 0x16161a,
+    skin: 0xf1d3b8, hair: 0x29324e, hairStyle: 'megumi', eyes: 0x2f5866, outfit: 'uniform',
+    top: NAVY, bottom: NAVY, accent: GOLD, shoes: 0x16161a,
   },
   nobara: {
     skin: 0xf7d5bb, hair: 0xd9773a, hairStyle: 'nobara', eyes: 0x8c5a2e, outfit: 'uniformSkirt',

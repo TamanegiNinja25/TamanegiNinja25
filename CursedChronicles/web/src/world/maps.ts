@@ -147,7 +147,7 @@ const hub: MapDef = {
 // ============================================================================
 const eishu: MapDef = {
   id: 'eishu', name: 'Eishu Juvenile Detention Center', jp: '英集少年院', size: [64, 72], night: true,
-  lighting: { sky: 0x5a6a76, ground: 0x22282c, hemiIntensity: 1.3, sun: 0xa0b4c4, sunIntensity: 1.1, sunDir: [-0.3, 1, -0.4], ambient: 0x7a8a96, ambientIntensity: 0.35, playerLight: 2.5, fog: 0x1a2428, fogNear: 20, fogFar: 56, bg: 0x10161a, bloom: 0.6, exposure: 1.05 },
+  lighting: { sky: 0x6a7c8a, ground: 0x2a3236, hemiIntensity: 1.45, sun: 0xa8bccc, sunIntensity: 1.25, sunDir: [-0.3, 1, -0.4], ambient: 0x8a9aa6, ambientIntensity: 0.45, playerLight: 3, fog: 0x1a2428, fogNear: 20, fogFar: 56, bg: 0x10161a, bloom: 0.6, exposure: 1.05 },
   music: 'eishu', ambience: ['rain', 'hum'], weather: 'rain', levelRange: [7, 13],
   terrain: {
     kinds: ['concrete', 'asphalt', 'mud', 'flesh'], scales: [0.15, 0.15, 0.2, 0.2],
