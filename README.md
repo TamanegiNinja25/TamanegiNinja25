@@ -19,13 +19,15 @@ Megumi or Nobara from Sugisawa High to the Shibuya Incident, with story moments 
 the anime and manga, ten boss fights and Domain Expansions. Every model, sound and icon is
 generated in code with TypeScript and three.js, and the game runs fully offline.
 
-**New in v1.1.0**
-- Enterable schools, cinemas and stations whose halls are laid out fresh on every visit
-- Choso guarding the Prison Realm on B5F, plus new canon story scenes
-- About 20 techniques per class: actives, buffs, passives, reactions and an ultimate
-- A low-poly faceted art style, sound timed to every step and hit, and a Cheats tab
+**New in v1.2.0**
+- Quest tracking with a guide arrow, and travel to any area straight from the map
+- Mechamaru's reforge takes gear to +30, and the level cap is now 100
+- Smoother combat and faster menus, and updates now install over the old version
 
-**[⬇ Download the APK (v1.1.0)](https://github.com/TamanegiNinja25/JJK-Mobile-Game/releases/latest/download/CursedChronicles.apk)** · [What's new](https://github.com/TamanegiNinja25/JJK-Mobile-Game/releases/tag/v1.1.0) · [Source, screenshots and features](https://github.com/TamanegiNinja25/JJK-Mobile-Game)
+**Earlier:** enterable buildings generated on every visit, Choso and canon story scenes,
+about 20 techniques per class, a low-poly art style and a Cheats tab.
+
+**[⬇ Download the APK (v1.2.0)](https://github.com/TamanegiNinja25/JJK-Mobile-Game/releases/latest/download/CursedChronicles.apk)** · [What's new](https://github.com/TamanegiNinja25/JJK-Mobile-Game/releases/tag/v1.2.0) · [Source, screenshots and features](https://github.com/TamanegiNinja25/JJK-Mobile-Game)
 
 <!---
 TamanegiNinja25/TamanegiNinja25 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
