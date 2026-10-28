@@ -19,15 +19,16 @@ Megumi or Nobara from Sugisawa High through the Shibuya Incident and the Culling
 Shinjuku Showdown, with story moments taken from the manga, 21 boss fights and Domain Expansions. Every model, sound and icon is
 generated in code with TypeScript and three.js, and the game runs fully offline.
 
-**New in v1.3.0**
-- The story continues: Yasohachi Bridge, the Zen'in Clan Estate, two Culling Game colonies and Shinjuku
-- Eleven new bosses, including Higuruma's trial, Naoya's 24-frame dashes and Sukuna's true form
-- New characters (Yuta, Hakari, Higuruma and more), new music, and unique gear from every boss
+**New in v1.3.1**
+- A steadier camera, no more dashing through walls, and Yaga's workshop quest fixed
+- Smoother movement and animation, music and sound that keep in step with the action
+- Much less lag in crowded fights
 
-**Earlier:** quest tracking and map travel, Mechamaru's reforge to +30, level cap 100,
-enterable buildings generated on every visit, about 20 techniques per class and a Cheats tab.
+**Earlier:** v1.3.0 took the story through the Culling Game to the Shinjuku Showdown with
+eleven new bosses; before that, quest tracking and map travel, Mechamaru's reforge to +30,
+level cap 100, enterable buildings and a Cheats tab.
 
-**[⬇ Download the APK (v1.3.0)](https://github.com/TamanegiNinja25/JJK-Mobile-Game/releases/latest/download/CursedChronicles.apk)** · [What's new](https://github.com/TamanegiNinja25/JJK-Mobile-Game/releases/tag/v1.3.0) · [Source, screenshots and features](https://github.com/TamanegiNinja25/JJK-Mobile-Game)
+**[⬇ Download the APK (v1.3.1)](https://github.com/TamanegiNinja25/JJK-Mobile-Game/releases/latest/download/CursedChronicles.apk)** · [What's new](https://github.com/TamanegiNinja25/JJK-Mobile-Game/releases/tag/v1.3.1) · [Source, screenshots and features](https://github.com/TamanegiNinja25/JJK-Mobile-Game)
 
 <!---
 TamanegiNinja25/TamanegiNinja25 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
