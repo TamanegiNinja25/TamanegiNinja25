@@ -17,19 +17,20 @@
 A Zenonia-style action RPG for Android set in the world of Jujutsu Kaisen. Play as Yuji,
 Megumi or Nobara from Sugisawa High through the Shibuya Incident and the Culling Game to the
 Shinjuku Showdown, then unlock Sukuna and Modulo Yuji. Story moments taken from the manga,
-28 boss fights, Domain Expansions and an open world to explore. Every model, sound and icon
-is generated in code with TypeScript and three.js, and the game runs fully offline.
+28 boss fights, Domain Expansions, cutscenes, voiced visual-novel conversations and an open
+world to explore. Every model, sound, voice and icon is generated in code with TypeScript and
+three.js, and the game runs fully offline.
 
-**New in v1.4.0**
-- Four unlockable sorcerers: Sukuna in Yuji's body, Sukuna in Megumi's body, Heian Sukuna and Modulo Yuji
-- An open world past the east gate of Jujutsu High, plus the Sakurajima colony, with landmarks, sealed caches and wandering special grades
-- A new post-story chapter in Tengen's barrier: Toji Fushiguro, Suguru Geto's Night Parade and Gojo's last lesson
+**New in v1.5.0**
+- Conversations like a visual novel: both speakers in large character art, each with their own voice
+- Cutscenes for Domain Expansions, boss entrances, chapter clears and the big story moments, plus a 100%→0% domain meter and non-stop slashes inside Malevolent Shrine
+- Daily exorcisms: three bosses a day with drops of their own, and quest-line fixes
 
-**Earlier:** v1.3.1 steadied the camera, stopped dashes going through walls and cut lag; v1.3.0
-took the story through the Culling Game to the Shinjuku Showdown; before that, quest
-tracking and map travel, Mechamaru's reforge to +30, level cap 100 and enterable buildings.
+**Earlier:** v1.4.0 added four unlockable sorcerers (the Sukunas and Modulo Yuji), an open world
+and a post-story chapter; v1.3.x took the story to the Shinjuku Showdown and steadied the
+camera; before that, quest tracking and map travel, Mechamaru's reforge to +30 and level cap 100.
 
-**[⬇ Download the APK (v1.4.0)](https://github.com/TamanegiNinja25/JJK-Mobile-Game/releases/latest/download/CursedChronicles.apk)** · [What's new](https://github.com/TamanegiNinja25/JJK-Mobile-Game/releases/tag/v1.4.0) · [Source, screenshots and features](https://github.com/TamanegiNinja25/JJK-Mobile-Game)
+**[⬇ Download the APK (v1.5.0)](https://github.com/TamanegiNinja25/JJK-Mobile-Game/releases/latest/download/CursedChronicles.apk)** · [What's new](https://github.com/TamanegiNinja25/JJK-Mobile-Game/releases/tag/v1.5.0) · [Source, screenshots and features](https://github.com/TamanegiNinja25/JJK-Mobile-Game)
 
 <!---
 TamanegiNinja25/TamanegiNinja25 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
