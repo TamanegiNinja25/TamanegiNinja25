@@ -18,21 +18,23 @@ A Zenonia-style action RPG for Android set in the world of Jujutsu Kaisen. Play 
 Megumi or Nobara from Sugisawa High through the Shibuya Incident and the Culling Game to the
 Shinjuku Showdown, then unlock Sukuna, Modulo Yuji, Yuta Okkotsu and Toji Fushiguro. Story
 moments taken from the manga, 28 boss fights, Domain Expansions, cutscenes, voiced
-visual-novel conversations and an open world to explore. Every model, sound, voice and icon is
-generated in code with TypeScript and three.js, and the game runs offline (it only goes online
-to check for a newer version).
+visual-novel conversations and an open world to explore. Every model, voice and icon is
+generated in code with TypeScript and three.js, with recorded sound effects from Kenney's CC0
+packs, and the game runs offline (it only goes online to check for a newer version). You can
+also give any character your own 3D model.
 
-**New in v1.6.0**
-- Yuta Okkotsu (with Rika and his own domain, Authentic Mutual Love) and Toji Fushiguro (no cursed energy, every cursed tool) join as playable sorcerers, and replay the story as themselves
-- Reruns: replay any chapter or side request you have finished, with rewards growing to a mastery bonus on the fifth run
-- Hints when you're stuck, an in-game notice when a new version is out, themed confirmations for erasing saves, sharper character faces and combat voices
+**New in v1.7.0**
+- Your own 3D character models (GLB, glTF, VRM or FBX) for any of 34 characters, moved by the game's own animations: Mixamo, VRoid, Unity, Blender and MMD rigs are recognised, and a model's own idle, walk and run clips are used
+- Recorded sound effects from Kenney's free CC0 packs (blows, blades, footsteps per ground, menus), a Recorded/Synthesised setting, and 32 sounds you can swap for your own
+- A new Map tab: scroll the names, see any area's layout with doors, roads, quest givers and bosses, and travel from there
 
-**Earlier:** v1.5.0 added voiced visual-novel conversations, cutscenes and daily bosses; v1.4.0
+**Earlier:** v1.6.0 added Yuta Okkotsu and Toji Fushiguro as playable sorcerers, reruns and quest
+hints; v1.5.0 voiced visual-novel conversations, cutscenes and daily bosses; v1.4.0
 four unlockable sorcerers (the Sukunas and Modulo Yuji), an open world and a post-story chapter;
 v1.3.x took the story to the Shinjuku Showdown; before that, quest tracking and map travel,
 Mechamaru's reforge to +30 and level cap 100.
 
-**[⬇ Download the APK (v1.6.0)](https://github.com/TamanegiNinja25/JJK-Mobile-Game/releases/latest/download/CursedChronicles.apk)** · [What's new](https://github.com/TamanegiNinja25/JJK-Mobile-Game/releases/tag/v1.6.0) · [Source, screenshots and features](https://github.com/TamanegiNinja25/JJK-Mobile-Game)
+**[⬇ Download the APK (v1.7.0)](https://github.com/TamanegiNinja25/JJK-Mobile-Game/releases/latest/download/CursedChronicles.apk)** · [What's new](https://github.com/TamanegiNinja25/JJK-Mobile-Game/releases/tag/v1.7.0) · [Source, screenshots and features](https://github.com/TamanegiNinja25/JJK-Mobile-Game)
 
 <!---
 TamanegiNinja25/TamanegiNinja25 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
