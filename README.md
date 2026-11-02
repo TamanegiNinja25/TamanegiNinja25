@@ -23,18 +23,19 @@ generated in code with TypeScript and three.js, with recorded sound effects from
 packs, and the game runs offline (it only goes online to check for a newer version). You can
 also give any character your own 3D model.
 
-**New in v1.7.0**
-- Your own 3D character models (GLB, glTF, VRM or FBX) for any of 34 characters, moved by the game's own animations: Mixamo, VRoid, Unity, Blender and MMD rigs are recognised, and a model's own idle, walk and run clips are used
-- Recorded sound effects from Kenney's free CC0 packs (blows, blades, footsteps per ground, menus), a Recorded/Synthesised setting, and 32 sounds you can swap for your own
-- A new Map tab: scroll the names, see any area's layout with doors, roads, quest givers and bosses, and travel from there
+**New in v1.7.9**
+- Settings on the title screen now hold your own pictures, sounds and 3D models, and the update check
+- Quest givers stand in a glowing ring, and the objective tracker says roughly where to go ("Tokyo Outskirts · north-west, near ★ Mountain Shrine")
+- Curses only react once they see or hear you (a red ! shows when one spots you), drops are always gear your sorcerer can use, and the dialogue's name plate and AUTO / SKIP buttons stay in one place
 
-**Earlier:** v1.6.0 added Yuta Okkotsu and Toji Fushiguro as playable sorcerers, reruns and quest
+**Earlier:** v1.7.0 added your own 3D character models, recorded sound effects and a new Map
+tab; v1.6.0 added Yuta Okkotsu and Toji Fushiguro as playable sorcerers, reruns and quest
 hints; v1.5.0 voiced visual-novel conversations, cutscenes and daily bosses; v1.4.0
 four unlockable sorcerers (the Sukunas and Modulo Yuji), an open world and a post-story chapter;
 v1.3.x took the story to the Shinjuku Showdown; before that, quest tracking and map travel,
 Mechamaru's reforge to +30 and level cap 100.
 
-**[⬇ Download the APK (v1.7.0)](https://github.com/TamanegiNinja25/JJK-Mobile-Game/releases/latest/download/CursedChronicles.apk)** · [What's new](https://github.com/TamanegiNinja25/JJK-Mobile-Game/releases/tag/v1.7.0) · [Source, screenshots and features](https://github.com/TamanegiNinja25/JJK-Mobile-Game)
+**[⬇ Download the APK (v1.7.9)](https://github.com/TamanegiNinja25/JJK-Mobile-Game/releases/latest/download/CursedChronicles.apk)** · [What's new](https://github.com/TamanegiNinja25/JJK-Mobile-Game/releases/tag/v1.7.9) · [Source, screenshots and features](https://github.com/TamanegiNinja25/JJK-Mobile-Game)
 
 <!---
 TamanegiNinja25/TamanegiNinja25 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
